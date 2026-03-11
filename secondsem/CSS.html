@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Career Advice Bot</title>
+<style>
+  /* Updated color palette per user request */
+  :root {
+    --dark-blue: #03045E;
+    --blue: #0077B6;
+    --light-blue: #00B4D8;
+    --lighter-blue: #90E0EF;
+    --lightest-blue: #CAF0FB;
+    --text-dark: #222;
+    --text-light: #fff;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--dark-blue), var(--blue));
+    color: var(--text-light);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .bot-container {
+    background: var(--lightest-blue);
+    max-width: 350px;
+    width: 100%;
+    height: 600px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    color: var(--text-dark);
+  }
+
+  header {
+    background: var(--dark-blue);
+    padding: 15px 20px;
+    color: var(--text-light);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    user-select: none;
+  }
+
+  .subtitle {
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin-top: 4px;
+    color: var(--light-blue);
+  }
+
+  .chat-area {
+    flex: 1;
+    padding: 10px 15px;
+    background: var(--lightest-blue);
+    overflow-y: auto;
+    border-left: 4px solid var(--dark-blue);
+    border-right: 4px solid var(--blue);
+  }
+
+  .message {
+    margin: 10px 0;
+    max-width: 80%;
+    padding: 8px 15px;
+    border-radius: 20px;
+    line-height: 1.3;
+    font-size: 0.95rem;
+  }
+
+  .message.bot {
+    background-color: var(--light-blue);
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+  }
+
+  .message.user {
+    background-color: var(--dark-blue);
+    color: var(--text-light);
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+  }
+
+  form.input-area {
+    display: flex;
+    padding: 10px 15px;
+    background: var(--blue);
+  }
+
+  input[type="text"] {
+    flex: 1;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    outline: none;
+    border: 2px solid var(--lightest-blue);
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus {
+    border-color: var(--dark-blue);
+  }
+
+  button.send-btn {
+    background: var(--dark-blue);
+    border: none;
+    margin-left: 10px;
+    border-radius: 25px;
+    padding: 0 20px;
+    color: var(--lightest-blue);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button.send-btn:hover,
+  button.send-btn:focus {
+    background: var(--blue);
+  }
+
+  /* Scrollbar styling for chat */
+  .chat-area::-webkit-scrollbar {
+    width: 8px;
+  }
+  .chat-area::-webkit-scrollbar-track {
+    background: var(--lightest-blue);
+    border-radius: 5px;
+  }
+  .chat-area::-webkit-scrollbar-thumb {
+    background: var(--dark-blue);
+    border-radius: 5px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 400px) {
+    body {
+      padding: 5px;
+    }
+    .bot-container {
+      height: 100vh;
+      max-width: 100%;
+      border-radius: 0;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="bot-container" role="main" aria-label="Career equality advice bot">
+  <header>
+    Career Advice Bot
+    <div class="subtitle">Empowering your career path with equality &amp; insight</div>
+  </header>
+  <section class="chat-area" id="chat" aria-live="polite" aria-atomic="false" tabindex="0">
+    <!-- Messages will appear here dynamically -->
+  </section>
+  <form id="input-form" class="input-area" autocomplete="off" aria-label="Send message form">
+    <input type="text" id="user-input" name="userInput" placeholder="Type your question here..." aria-label="Type your question here" />
+    <button type="submit" class="send-btn" aria-label="Send message">Send</button>
+  </form>
+</div>
+
+<script>
+  (function() {
+    const chatArea = document.getElementById('chat');
+    const form = document.getElementById('input-form');
+    const input = document.getElementById('user-input');
+
+    // This is a stub - no messages or logic implemented as requested
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const userText = input.value.trim();
+      if (!userText) return;
+      // Placeholder for future bot interaction
+      input.value = '';
+      input.focus();
+    });
+
+    input.focus();
+  })();
+</script>
+</body>
+</html>
+
