@@ -1,2 +1,2 @@
 # 1stcomprog
-firstsem
+activity&projects
