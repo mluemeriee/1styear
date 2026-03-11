@@ -17,10 +17,11 @@ function calculatePayroll($name, $hoursWorked, $hourlyWage, $taxRate) {
 }
 
 
-$employee1 = ['name' => 'Shanyl Ann', 'hoursWorked' => 40, 'hourlyWage' => 20, 'taxRate' => 10];
+$employee1 = ['name' => 'Bluee', 'hoursWorked' => 40, 'hourlyWage' => 20, 'taxRate' => 10];
 
 
 calculatePayroll($employee1['name'], $employee1['hoursWorked'], $employee1['hourlyWage'], $employee1['taxRate']);
 
 ?>
+
 
